@@ -18,3 +18,6 @@ Padronização para aquisição de imagens:
     Ex: tesoura-2bdi1, chave-1mdo3
 - Utilizar https://play.google.com/store/apps/details?id=com.vinson.shrinker no celular para ajustar o tamanho da imagem com largura de 1200px e altura proporcional.
 - Foto na horizontal, com objeto inteiramente na foto e centralizado.
+
+
+Pasta no drive onde se encontram as imagens: https://drive.google.com/drive/folders/1UCvz5sp8_lax59cgArrOyZSArcTVpvfI?usp=sharing
