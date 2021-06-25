@@ -5,6 +5,8 @@ Grupo: Giulia Nardi, Daniel Costa, Carlos Reis
 
 ---
 
+##EP1
+
 Base de imagens:
 
 - Classes (objetos fotografados): desodorante, pente, faca, copo, grampeador, óculos, chave, tesoura, lapis, garfo
