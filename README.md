@@ -42,7 +42,7 @@ Para a soma de fundo do gradiente de cinza foi gerado um gradiente de cinza que 
  
 Também foi realizada a transformação logarítmica a qual gerou imagens com um contraste menor entre os níveis de cinza. Para tanto foi utilizada a função exposure.adjust_log(imagem, 1) da biblioteca skimage.
  
-Para a transformação exponencial, foi realizada a operação $e^{pixel-1}$ onde foram geradas imagens mais claras, pois o range de cor ficou em [e^-1, 1] o que tornou as imagens mais claras.
+Para a transformação exponencial, foi realizada a operação e^{pixel-1} onde foram geradas imagens mais claras, pois o range de cor ficou em [e^-1, 1] o que tornou as imagens mais claras.
  
 Por fim foi realizada a transformação do filtro da média usando convolução, foi utilizada uma máscara de 3X3 o que causou um leve desfoque nas imagens. Também foi feita a cópia do originalDataset e do originalGrayDataset para o augmentedDataset, com isso o augmentedDataset ficou com seis pastas com 1080 fotos cada, totalizando 6480 imagens.
  
