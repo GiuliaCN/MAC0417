@@ -53,3 +53,27 @@ Inicialmente foi realizada outra transformação usando a equalização do histo
 Após a realização de todas as transformações obtivemos um novo dataset com mais 6480 imagens. Como todas essas imagens foi plotada o protótipo médio de cada classe em cada uma das pastas, onde foi possível ver borrões com a forma do objeto da classe. Assim como foi analisado o histograma médio das imagens e a variância de cada tom de cinza para cada classe.
  
 Pelos histogramas foi possível perceber muito claramente o efeito da equalização do histograma, pois os valores dos pixels das classes do dataset normalizado apresentaram uma maior variância que os demais, onde os valores dos pixels ficaram mais concentrados.
+
+
+## EP3
+ 
+**Objetivo:** Implementar um projeto básico de reconhecimento de imagens com o dataset produzido no ep2 usando as técnicas e algoritmos debatidos em classe.
+ 
+Esse trabalho foi dividido em duas partes, inicialmente foi realizada a segmentação das imagens um processo para identificar onde o objetos se encontravam na imagens, em seguida, com os resultados da segmentação foram implementados modelos para testar as imagens. Durante todo o processo foram estabelecidas métricas para testar a eficiência dos algoritmos.
+ 
+### EP3.1
+ 
+Inicialmente foi produzido a threshold manual usando o software Gimp e o mapeamento manual dos contornos dos objetos, produzindo imagens binárias, com o objeto em branco e o fundo preto. Tal processo foi realizado em 17 imagens de cada classe, o que corresponde a 15,74% das imagens do dataset total. Essa imagens foram usadas para validar o dataset automático e o feret box, assim como para melhorar a eficiência na detecção de alguns objetos.
+ 
+Na segmentação automática foi testado alguns algoritmos com Otsu, só que o resultado estava ruim principalmente em imagens com fundo marrom, que não contrastava muito com objeto, para melhorar isso também foi usada a técnica de detecção de Bordas de Canny, isso tornou o método mais eficiente. Além disso, foi usada uma técnica de inversão da imagem pois algumas imagens estavam ficando com objeto preto e o fundo branco, para revólver foi feita uma detecção do canto da imagem, se a cor predominante fosse branca indicava que a imagem precisava ser invertida.
+ 
+No feret box, foi implementado usando um pacote de detecção de labels do scikit-image, o qual detecta as regiões em branco da imagem, no nosso caso selecionamos a maior região branco contínua para receber a caixa. Com isso usou-se a imagens do threshold automático para gerar as caixas e com as caixas determinadas foram realizados os cortes em todas as imagens iguais no dataset augmented, gerando assim um dataset de imagens apenas com os objetos que precisam ser avaliados.
+ 
+Por fim, foi realizada uma análise da eficiência tanto do threshold automático quanto do feret box. No caso do ground-truth foi usada como métrica a quantidade de área branca comum a imagem do ground-truth automático e do manual dividida pelo total de região brancas, com isso conseguimos identificar que nas imagens com fundo cinza foram as que tiveram mais erros, mas no geral o método teve uma eficiência média superior a 60%. Para o feret box, pegou-se a área da caixa da imagem automática pela área da caixa da imagem manual.
+ 
+O resultado final foi o augmentedSegmentedDataset que foi utilizado na classificação.
+
+### EP3.2
+
+Na segunda parte foi inicialemente realizada a estração de características da imagens usando ...
+
