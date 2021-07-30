@@ -77,9 +77,9 @@ O resultado final foi o augmentedSegmentedDataset que foi utilizado na classific
 As bases de dados da etapa anterior são usadas nessa etapa. Sendo usadas como o set de treino(train) e teste(test).
 O set de treino contém as imagens ground-truth (geradas manualmente) e o set de teste as imagens geradas automaticamente. Ao criar os dataset, cria-se também a array y referente as labels, y contém inteiros [0,9] que significa o indice da classe (array classes)
 
-Cada pixel das imagens foi considerado um feature, assim, a criação da array Features contendo todos os features do set é de simples entendimento, mas requer memória e processamento para sua execução.
+Para a criação do Feature, foi usando o feret box desenvolvido na etapa anterior e dois valores como tamanhos padrôes (c e r) (escolhido por nós após testes). Assim, de cada imagem de ambos os sets, foi gerado seu feature (uma matriz rxc contendo a feret box centralizada da imagem(seus pixels)).
 
-Do Features referente ao set de treino, criou-se pca, uma array resultante do processo de PCA em Features.
+Do Features referente ao set de treino, criou-se pca, uma array resultante do processo de PCA em Features do set treino.
 Com pca passa-se pelo modelo de classificação SVM.
 
-Os resultados desse modelo são analizados.
+Os resultados desse modelo foram analizados analizados.
