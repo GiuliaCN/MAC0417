@@ -74,6 +74,12 @@ Por fim, foi realizada uma análise da eficiência tanto do threshold automátic
 O resultado final foi o augmentedSegmentedDataset que foi utilizado na classificação.
 
 ### EP3.2
+As bases de dados da etapa anterior são usadas nessa etapa. Sendo usadas como o set de treino(train) e teste(test).
+O set de treino contém as imagens ground-truth (geradas manualmente) e o set de teste as imagens geradas automaticamente. Ao criar os dataset, cria-se também a array y referente as labels, y contém inteiros [0,9] que significa o indice da classe (array classes)
 
-Na segunda parte foi inicialemente realizada a estração de características da imagens usando ...
+Cada pixel das imagens foi considerado um feature, assim, a criação da array Features contendo todos os features do set é de simples entendimento, mas requer memória e processamento para sua execução.
 
+Do Features referente ao set de treino, criou-se pca, uma array resultante do processo de PCA em Features.
+Com pca passa-se pelo modelo de classificação SVM.
+
+Os resultados desse modelo são analizados.
